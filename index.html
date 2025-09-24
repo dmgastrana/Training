@@ -2,35 +2,32 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Training Manual (View Only)</title>
+  <title>Training Manual</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      margin: 40px;
       background-color: #f4f4f4;
-      color: #333;
-    }
-    h1 {
       text-align: center;
-      color: #005a9c;
+      padding: 50px;
     }
-    .viewer {
-      margin-top: 30px;
-      display: flex;
-      justify-content: center;
+    .pdf-link {
+      display: inline-block;
+      text-decoration: none;
+      color: #333;
+      font-size: 18px;
     }
-    iframe {
-      border: none;
-      width: 80%;
-      height: 700px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    .pdf-link img {
+      width: 40px;
+      vertical-align: middle;
+      margin-right: 10px;
     }
   </style>
 </head>
 <body>
-  <h1>Training Manual (View Only)</h1>
-  <div class="viewer">
-    <iframe src="abbadox-training-scheduling.pdf#toolbar=0"></iframe>
-  </div>
+  <h1>Training Manual</h1>
+  <a class="pdf-link" href="training-manual.pdf" target="_blank" title="View PDF">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/PDF_file_icon.svg" alt="PDF Icon">
+    View PDF
+  </a>
 </body>
 </html>
