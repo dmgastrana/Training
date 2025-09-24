@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Training Manual</title>
+  <title>Upload Training PDFs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -10,44 +11,33 @@
       padding: 50px;
       background-color: #f4f4f4;
     }
-    ul {
-      list-style: none;
-      padding: 0;
+    input[type="file"] {
+      margin: 20px 0;
     }
-    li {
-      margin: 10px 0;
-    }
-    .pdf-link {
-      text-decoration: none;
-      color: #333;
-      font-size: 18px;
-    }
-    .pdf-link img {
-      width: 24px;
-      vertical-align: middle;
-      margin-right: 8px;
+    .file-list {
+      margin-top: 30px;
+      text-align: left;
+      display: inline-block;
     }
   </style>
 </head>
 <body>
-  <h1>Training Manual</h1>
-  <ul>
-    <li>
-      <a class="pdf-link" href="Safety_Guide.pdf" target="_blank">
-        <img src="pdf-icon.png" alt="PDF Icon"> Safety Guide
-      </a>
-    </li>
-    <li>
-      <a class="pdf-link" href="Installation_Instructions.pdf" target="_blank">
-        <img src="pdf-icon.png" alt="PDF Icon"> Installation Instructions
-      </a>
-    </li>
-    <li>
-      <a class="pdf-link" href="Troubleshooting_Tips.pdf" target="_blank">
-        <img src="pdf-icon.png" alt="PDF Icon"> Troubleshooting Tips
-      </a>
-    </li>
-    <!-- Add more PDFs below -->
-  </ul>
+  <h1>Upload Training Manual PDFs</h1>
+  <form id="uploadForm">
+    <input type="file" id="pdfInput" accept="application/pdf" multiple>
+  </form>
+
+  <div class="file-list" id="fileList"></div>
+
+  <script>
+    const input = document.getElementById('pdfInput');
+    const fileList = document.getElementById('fileList');
+
+    input.addEventListener('change', () => {
+      fileList.innerHTML = '<h2>Selected Files:</h2><ul>' +
+        Array.from(input.files).map(file => `<li>${file.name}</li>`).join('') +
+        '</ul>';
+    });
+  </script>
 </body>
 </html>
