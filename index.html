@@ -28,22 +28,45 @@
       vertical-align: middle;
       margin-right: 10px;
     }
+    #manualContent {
+      display: none;
+    }
+    .access-denied {
+      font-size: 24px;
+      color: red;
+      margin-top: 100px;
+    }
   </style>
 </head>
 <body>
-  <h1>Training Manual</h1>
-  <ul>
-    <li>
-      <a class="pdf-link" href="abbadox-training-scheduling.pdf" target="_blank">
-        <img src="pdf-icon.png" alt="PDF Icon"> Abbadox Training Schedule
-      </a>
-    </li>
-    <li>
-      <a class="pdf-link" href="How%20to%20check%20for%20Eligibility.pdf" target="_blank">
-        <img src="pdf-icon.png" alt="PDF Icon"> How to Check for Eligibility
-      </a>
-    </li>
-  </ul>
+
+  <div id="manualContent">
+    <h1>Training Manual</h1>
+    <ul>
+      <li>
+        <a class="pdf-link" href="abbadox-training-scheduling.pdf" target="_blank">
+          <img src="pdf-icon.png" alt="PDF Icon"> Abbadox Training Schedule
+        </a>
+      </li>
+      <li>
+        <a class="pdf-link" href="How%20to%20check%20for%20Eligibility.pdf" target="_blank">
+          <img src="pdf-icon.png" alt="PDF Icon"> How to Check for Eligibility
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <script>
+    const correctPassword = "dmg1129";
+    const userInput = prompt("Please enter the password to access the training manual:");
+
+    if (userInput === correctPassword) {
+      document.getElementById("manualContent").style.display = "block";
+    } else {
+      document.body.innerHTML = "<div class='access-denied'>Access Denied: Incorrect Password</div>";
+    }
+  </script>
+
 </body>
 </html>
 
